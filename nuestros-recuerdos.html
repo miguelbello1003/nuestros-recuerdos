@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestros Recuerdos</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#ffd6e8;
+    color:#5a2a3c;
+    text-align:center;
+}
+
+h1{
+    margin-top:40px;
+    font-size:40px;
+}
+
+.login-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    width:300px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#ff7eb3;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff4f9a;
+}
+
+.tabs{
+    margin:30px 0;
+}
+
+.tab-btn{
+    margin:5px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:#ffb6d5;
+    cursor:pointer;
+}
+
+.tab-btn:hover{
+    background:#ff7eb3;
+    color:white;
+}
+
+.year-section{
+    display:none;
+    margin-bottom:40px;
+}
+
+img{
+    width:80%;
+    max-width:500px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.caption{
+    font-style:italic;
+    margin-bottom:30px;
+}
+
+.special-text{
+    font-size:20px;
+    font-weight:bold;
+    margin:30px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-container" id="login">
+    <div class="login-box">
+        <h2>Nuestros Recuerdos 💗</h2>
+        <p>Pista usuario: es tu nombre al revés</p>
+        <input type="text" id="user" placeholder="Usuario">
+        <p>Pista contraseña: es lo que siento por ti</p>
+        <input type="password" id="pass" placeholder="Contraseña">
+        <button onclick="login()">Entrar</button>
+        <p id="error" style="color:red;"></p>
+    </div>
+</div>
+
+<div id="main" style="display:none;">
+    <h1>Nuestros Recuerdos 💕</h1>
+
+    <div class="tabs">
+        <button class="tab-btn" onclick="showYear('2023')">2023</button>
+        <button class="tab-btn" onclick="showYear('2024')">2024</button>
+        <button class="tab-btn" onclick="showYear('2025')">2025</button>
+        <button class="tab-btn" onclick="showYear('2026')">2026</button>
+        <button class="tab-btn" onclick="showYear('future')">2027</button>
+        <button class="tab-btn" onclick="showYear('future')">2028</button>
+        <button class="tab-btn" onclick="showYear('future')">...</button>
+    </div>
+
+    <!-- 2023 -->
+    <div id="2023" class="year-section">
+        <img src="2023-1.jpeg">
+        <div class="caption">Nuestra primera de muchas fotos juntos...</div>
+
+        <img src="2023-2.jpeg">
+        <div class="caption">Era Black Friday y compramos polerones iguales, y apenas volvi de Santiago nos tomamos esta foto.</div>
+
+        <img src="2023-3.jpeg">
+        <div class="caption">Cuando me maquillaste y el resultado habló por sí solo jajaja.</div>
+
+        <img src="2023-4.jpeg">
+        <div class="caption">Nuestra primera cita elegante en el Aurora.</div>
+
+        <img src="2023-5.jpeg">
+        <div class="caption">Hornitos en día nublado... pero felices.</div>
+
+        <img src="2023-6.jpeg">
+        <div class="caption">Nuestro primer Halloween juntos y no sabemos si somos gatitos o ratoncitos.</div>
+    </div>
+
+    <!-- 2024 -->
+    <div id="2024" class="year-section">
+        <img src="2024-1.jpeg">
+        <div class="caption">Empieza el año y tú tan hermosa como siempre.</div>
+
+        <img src="2024-2.jpeg">
+        <div class="caption">Un lindo paseo a la portada pero mas linda eres tu.</div>
+
+        <img src="2024-3.jpeg">
+        <div class="caption">Primer semestre juntos en la universidad.</div>
+
+        <img src="2024-4.jpeg">
+        <div class="caption">Nuestra típica sesion de fotos en el Royal Ranch.</div>
+
+        <img src="2024-5.jpeg">
+        <div class="caption">Te amo infinito.</div>
+
+        <img src="2024-6.jpeg">
+        <div class="caption">Cerramos el año con un lindo besito.</div>
+    </div>
+
+    <!-- 2025 -->
+    <div id="2025" class="year-section">
+        <img src="2025-1.jpeg">
+        <div class="caption">Nuestro primer viaje juntos.</div>
+
+        <img src="2025-2.jpeg">
+        <div class="caption">Un lindo recuerdo de Punta Cana.</div>
+
+        <img src="2025-3.jpeg">
+        <div class="caption">Siempre estudiando juntos.</div>
+
+        <img src="2025-4.jpeg">
+        <div class="caption">Nuestra primera película 3D y tu preciosa con esos lentes.</div>
+
+        <img src="2025-5.jpeg">
+        <div class="caption">No podía faltar una foto en tu sillón.</div>
+
+        <img src="2025-6.jpeg">
+        <div class="caption">Viaje a Iquique y despues quedamos sin luz.</div>
+    </div>
+
+    <!-- 2026 -->
+    <div id="2026" class="year-section">
+        <img src="2026-1.jpeg">
+        <div class="caption">Empezamos el año abrazados.</div>
+
+        <img src="2026-2.jpeg">
+        <div class="caption">Eres una princesa muy preciosa.</div>
+
+        <div class="special-text">
+            Por un 2026 donde sigamos construyendo recuerdos juntos.
+        </div>
+    </div>
+
+    <!-- FUTURO -->
+    <div id="future" class="year-section">
+        <div class="special-text">
+            A seguir escribiendo nuestra historia.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function login(){
+    let user=document.getElementById("user").value;
+    let pass=document.getElementById("pass").value;
+
+    if(user==="anitram" && pass==="amor"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("main").style.display="block";
+    } else {
+        document.getElementById("error").innerText="Ups... intenta de nuevo 💕";
+    }
+}
+
+function showYear(year){
+    let sections=document.getElementsByClassName("year-section");
+    for(let i=0;i<sections.length;i++){
+        sections[i].style.display="none";
+    }
+    document.getElementById(year).style.display="block";
+}
+</script>
+
+</body>
+</html>
